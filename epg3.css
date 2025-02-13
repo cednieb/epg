@@ -1,0 +1,101 @@
+*{border-collapse:collapse;}
+
+body{background-color:gray; overflow-y:hidden; overflow-x:hidden; height:100%;   } /*#aaaaaa;*/  /*     overflow-y:scroll; */  
+
+
+@media only screen and (max-width: 800px) 
+{
+body{ overflow-y:visible;} 
+.divprog p {font-size:18px;}
+}
+
+#verticalLineNow {border-left: solid rgba(255, 0, 0, .2) 3px;position:relative; height:100%; left:0px; width:10px;z-index:994;}  
+
+.loupe:link {text-decoration: none; color: #0000ff; font-family: Arial, Arial; font-size: 16pt}
+.loupe:visited {text-decoration: none; color: #0000ff; font-family: Arial, Arial; font-size: 16pt}
+.loupe:active {text-decoration: none; color: #ffffff; font-family: Arial, Arial; font-size: 16pt}
+.loupe:hover {text-decoration: underline; color: #999999; font-size: 16pt}
+
+#menu {background-color:#000000;color:#FFFFFF;z-index:997;position:fixed;top:0px;display:flex;flex-direction:row;align-content:center;justify-content:space-evenly;}     /*space-around; space-between;*/
+
+.divfirst{position:absolute;overflow:hidden;border:1px solid #000000;background-color:#FFFFFF;z-index:997;}
+.divblank{position:absolute;overflow:hidden;border:1px solid #000000;} /*#DDDDDDaa;*/ /*background-color:#FFFFFF;*/
+.divblank{background-color:gray;background-image: repeating-linear-gradient(45deg,transparent,transparent 5px,rgba(255,255,255,.5) 5px,rgba(255,255,255,.5) 10px);}
+.divprog {position:absolute;overflow:hidden;border:1px solid #000000;background-color:gray;color:#FFFFFF;}
+
+.divprog p {margin-left:10px;margin-top:-1px;margin-bottom:-1px;font-size:16px;}
+
+.clock0{position:absolute;color:white;background-color:black;z-index:995;text-align:right;}  
+.clock{position:absolute;color:white;background-color:black;z-index:995;}  /* display:flex;flex-direction:row;justify-content:space-between; */
+
+.spanleft{float:left;width:30%;text-align:left;}
+.spanmiddle{float:left;width:40%;text-align:center;}
+.spanright{float:left;width:30%;text-align:right;}
+
+.divsidearrow{position:fixed;background-color:#ffd700e0;top:0px;z-index:1000;}  /*#ffd700*/ /*height:100%;*/
+.divsidearrow{display:flex;flex-direction:column;justify-content:stretch;align-content:center;} /*justify-content:space-around;*/
+
+.arrowshalf_left   {height:22%;background-image:url(left0.png);background-repeat:no-repeat;background-position:center center;background-color:#000000ff;}
+.arrowsone_left    {height:9%;background-image:url(left1.png); background-repeat:no-repeat;background-position:center center;background-color:#000000ff;}
+.arrowstwo_left    {height:9%;background-image:url(left2.png); background-repeat:no-repeat;background-position:center center;background-color:#000000ff;}
+
+.arrowshalf_right  {height:22%;background-image:url(right0.png);background-repeat:no-repeat;background-position:center center;background-color:#000000ff;}
+.arrowsone_right   {height:9%;background-image:url(right1.png); background-repeat:no-repeat;background-position:center center;background-color:#000000ff;}
+.arrowstwo_right   {height:9%;background-image:url(right2.png); background-repeat:no-repeat;background-position:center center;background-color:#000000ff;}
+
+.arrowshalf_left  {border-bottom:2px solid #ffffff;border-top:2px solid #ffffff;} 
+.arrowsone_left   {border-bottom:2px solid #ffd800;border-top:2px solid #ffd800;}  
+.arrowstwo_left   {border-bottom:2px solid #bc4f01;border-top:2px solid #bc4f01;}  
+
+.arrowshalf_right {border-bottom:2px solid #ffffff;border-top:2px solid #ffffff;} 
+.arrowsone_right  {border-bottom:2px solid #ffd800;border-top:2px solid #ffd800;}   
+.arrowstwo_right  {border-bottom:2px solid #bc4f01;border-top:2px solid #bc4f01;}   
+
+.arrowsempty {height:7%;background-color:#000000ff;}
+
+.divarray{position:absolute;overflow:hidden;border:1px solid #000000;background-color:#FFFFFF;}
+
+
+// see later div parent class tooltip  span child class tooltiptext
+.tooltip {}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 1;
+  transition: opacity 5s;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 0;
+}
+
+
+// replace the attribute title with data-title
+[data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+}
+[data-title]:after {
+    content: attr(data-title);
+    background-color: #00FF00;
+    color: #111;
+    font-size: 150%;
+    
+    /*
+    position: absolute;
+    padding: 1px 5px 2px 5px;
+    bottom: -1.6em;
+    left: 100%;
+    */
+    white-space: nowrap;
+    box-shadow: 1px 1px 3px #222222;
+    opacity: 0;
+    border: 1px solid #111111;
+    z-index: 99999;
+    visibility: hidden;
+}
+[data-title] {
+    /*position: relative;*/
+}
+
